@@ -1,11 +1,13 @@
+import { StrictMode } from 'react';
+import { createRoot } from 'react-dom/client';
+import Home from './pages/Home';
+// import { Provider } from 'react-redux';
+import './index.css';
 
-function App() {
-
-  return (
-    <div>
-     hi
-    </div>
-  )
-}
-
-export default App
+createRoot(document.getElementById('root')!).render(
+  <StrictMode>
+    {/* <Provider store={store}> */}
+      <Home />
+    {/* </Provider> */}
+  </StrictMode>
+);
