@@ -1,7 +1,14 @@
 {
+  "compilerOptions":{
+    "types": ["vitest/globals","node"],
+  },
   "files": [],
   "references": [
     { "path": "./tsconfig.app.json" },
     { "path": "./tsconfig.node.json" }
+  ],
+  "include": [
+    "src/**/*",
+    "vite-env.d.ts"  // Include the vite-env.d.ts for type checking
   ]
 }
