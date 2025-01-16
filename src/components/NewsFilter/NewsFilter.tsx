@@ -2,8 +2,6 @@ import { useSelector } from "react-redux";
 import { setCategory } from "../../store/features/newsSlice";
 import { RootState } from "../../store/store";
 import { useAppDispatch } from "../../hooks/reduxHooks";
-// import { fetchNewsByCategory } from '../../api/newsAPI';
-import NewsSearch from "../NewsSearch/NewsSearch";
 import { fetchNewsByCategory } from "../../api/newsAPI";
 import { Button } from "../Button/Button";
 
@@ -24,7 +22,6 @@ export const NewsFilter: React.FC<NewsFilterProps> = ({ newsCategories }) => {
 
   return (
     <section className="flex flex-col p-2 ">
-      <NewsSearch origin="news-filter" />
       <div
         className={` flex max-w-full gap-2 p-4 overflow-x-auto sm:flex-wrap md:justify-start`}
       >
@@ -50,11 +47,7 @@ export const NewsFilter: React.FC<NewsFilterProps> = ({ newsCategories }) => {
               </Button>
             )
           )}
-        {searchQuery.trim() !== "" && (
-          <h2 className="text-xl font-semibold">
-            Articles related to <strong>'{searchQuery}'</strong>{" "}
-          </h2>
-        )}
+
       </div>
     </section>
   );

@@ -1,27 +1,32 @@
 import React, { useEffect, useState } from "react";
 import { useAppDispatch } from "../../hooks/reduxHooks";
 import { useSelector } from "react-redux";
-import { setSearchQuery } from "../../store/features/newsSlice";
-import { fetchNewsByCategory, searchNews } from "../../api/newsAPI";
+import { setSearchQuery, setSearchResults } from "../../store/features/newsSlice";
+import { searchNews } from "../../api/newsAPI";
 import { Search } from "lucide-react";
 import { RootState } from "../../store/store";
 import { Button } from "../Button/Button";
+import { useNavigate } from "react-router";
 
 interface NewsSearchProps {
   origin: string;
 }
 
-const NewsSearch: React.FC<NewsSearchProps> = ({ origin }) => {
+const NewsSearch: React.FC<NewsSearchProps> = () => {
   const dispatch = useAppDispatch();
-  const [searchTerm, setSearchTerm] = useState("");
-  const { loading, selectedCategory } = useSelector(
+
+  const { loading,searchQuery} = useSelector(
     (state: RootState) => state.news
   );
 
+  const [searchTerm, setSearchTerm] = useState(searchQuery);
+
+  const navigate= useNavigate()
   const handleSearch = () => {
     if (searchTerm.trim()) {
       dispatch(setSearchQuery(searchTerm));
       dispatch(searchNews(searchTerm));
+      navigate('/search')
     } else {
       alert("Please enter a topic");
     }
@@ -36,20 +41,19 @@ const NewsSearch: React.FC<NewsSearchProps> = ({ origin }) => {
   useEffect(() => {
     if (searchTerm === "") {
       dispatch(setSearchQuery(""));
-      dispatch(fetchNewsByCategory(selectedCategory));
+      dispatch(setSearchResults([]));
+      navigate("/")
     }
   }, [searchTerm]);
 
   return (
     <div
       aria-label="search container"
-      className={`${
-        origin === "news-header" ? "hidden sm:flex" : "flex sm:hidden w-full"
-      } flex-row justify-between items-center p-2 pl-6 bg-[#bababa3d] rounded-full w-3/5 lg:w-4/6`}
+      className={` flex flex-row justify-between items-center p-2 pl-6 bg-[#bababa3d] rounded-full w-full lg:w-4/6`}
     >
       <input
         aria-label="search input"
-        className="text-black sm:text-white bg-transparent outline-none w-full"
+        className="text-white bg-transparent outline-none w-full"
         placeholder="Search news..."
         type="text"
         value={searchTerm}
@@ -67,7 +71,7 @@ const NewsSearch: React.FC<NewsSearchProps> = ({ origin }) => {
         <Search
           strokeWidth={3}
           aria-label="search icon"
-          className=" text-black sm:text-white "
+          className="text-white "
           width={20}
           height={20}
         />
