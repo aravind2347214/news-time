@@ -4,9 +4,9 @@
 
 /* Enable smooth scrolling for the entire document */
 html {
-    scroll-behavior: smooth;
-  }
-  ::-webkit-scrollbar {
-    width: 8px; /* Width of the scrollbar */
-    display: none;
-  }
+  scroll-behavior: smooth;
+}
+::-webkit-scrollbar {
+  width: 8px; /* Width of the scrollbar */
+  display: none;
+}
