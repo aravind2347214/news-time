@@ -6,4 +6,5 @@ export interface NewsState {
   error: null | string;
   selectedCategory: string;
   searchQuery: string;
+  searchResults:News[];
 }

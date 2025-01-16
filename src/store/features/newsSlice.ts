@@ -8,6 +8,7 @@ const initialState: NewsState = {
   error: null,
   selectedCategory: "general",
   searchQuery: "",
+  searchResults:[],
 };
 
 const newsSlice = createSlice({
@@ -21,6 +22,9 @@ const newsSlice = createSlice({
     setSearchQuery: (state, action) => {
       state.searchQuery = action.payload;
     },
+    setSearchResults:(state,action)=>{
+      state.searchResults=action.payload;
+    }
   },
   extraReducers: (builder) => {
     builder
@@ -42,7 +46,7 @@ const newsSlice = createSlice({
       })
       .addCase(searchNews.fulfilled, (state, action) => {
         state.loading = false;
-        state.articles = action.payload;
+        state.searchResults = action.payload;
       })
       .addCase(searchNews.rejected, (state, action) => {
         state.loading = false;
@@ -51,5 +55,5 @@ const newsSlice = createSlice({
   },
 });
 
-export const { setCategory, setSearchQuery } = newsSlice.actions;
+export const { setCategory, setSearchQuery,setSearchResults } = newsSlice.actions;
 export default newsSlice.reducer;
