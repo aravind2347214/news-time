@@ -1,50 +1,52 @@
-# React + TypeScript + Vite
+# 📰 NewsApp 
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+NewsApp is a modern and responsive web application that allows users to view the latest news, filter articles by category, and search for specific topics. Powered by the [NewsAPI](https://newsapi.org/), this application offers a clean and intuitive user experience.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
 
-## Expanding the ESLint configuration
+![mobile-homepage](./images/mobile-images.png)
+![desktop-homepage](./images/home-desktop.png)
+![desktop-search](./images/search-desktop.png)
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+---
 
-- Configure the top-level `parserOptions` property like this:
+## Features
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+- 🌍 **Browse Latest News**: Stay updated with the latest news from around the globe.
+- 🏷️ **Category Filters**: Filter news by categories such as Technology, Sports, Politics, Healthcare, and more.
+- 🔍 **Search Functionality**: Search for specific topics or keywords across articles.
+- 🎨 **Responsive Design**: Optimized for mobile, tablet, and desktop using TailwindCSS.
+- ⚡ **Built with Modern Technologies**: React, TypeScript, and TailwindCSS for fast and maintainable code.
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+---
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
+## Technologies Used
 
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
-```
+- **Frontend**: React, TypeScript, TailwindCSS
+- **API**: [NewsAPI](https://newsapi.org/)
+- **State Management**: Redux Toolkit
+- **Tooling**: Vite (for blazing-fast development)
+
+---
+
+## Installation and Setup
+
+1. **Clone the Repository**
+   ```bash
+   git clone https://github.com/aravind2347214/news-app.git
+   cd news-app
+
+2. **Install Dependencies**
+    ```bash
+    npm install
+
+3. **Create .env to store API Key**
+    ```bash
+    VITE_NEWS_API_KEY=your_api_key_here
+
+4. *Run the Application*
+    ```bash
+    npm run dev
+
+
