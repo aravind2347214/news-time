@@ -20,7 +20,7 @@ function Home() {
 
   return (
     <div>
-      <NewsHeader origin='home' title="News App" />
+      <NewsHeader origin='home' title="News Time" />
       <NewsFilter newsCategories={newsCategories} />
       <NewsList origin='home'/>
     </div>
