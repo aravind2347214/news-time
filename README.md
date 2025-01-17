@@ -1,13 +1,17 @@
-# 📰 NewsApp 
+# 📰 News Time
 
 NewsApp is a modern and responsive web application that allows users to view the latest news, filter articles by category, and search for specific topics. Powered by the [NewsAPI](https://newsapi.org/), this application offers a clean and intuitive user experience.
 
 ---
 
+### Home Page
+![desktop-home-page](./images/homepage-desktop.png)
 
-![mobile-homepage](./images/mobile-images.png)
-![desktop-homepage](./images/home-desktop.png)
-![desktop-search](./images/search-desktop.png)
+## Search Page
+![desktop-search-page](./images/searchpage-desktop.png)
+
+## Mobile View
+![mobile-consolidated-pages](./images/mobile-consolidated-pages.png)
 
 ---
 
