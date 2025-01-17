@@ -39,6 +39,10 @@ const NewsSearch: React.FC<NewsSearchProps> = () => {
   };
 
   useEffect(() => {
+    setSearchTerm(searchQuery); // Update input when searchQuery changes
+  }, [searchQuery]);
+
+  useEffect(() => {
     if (searchTerm === "") {
       dispatch(setSearchQuery(""));
       dispatch(setSearchResults([]));

@@ -14,6 +14,8 @@ const NewsCard: React.FC<NewsCardProps> = ({ news }) => {
   const [imageError, setImageError] = useState(false);
   const [isImageLoaded, setIsImageLoaded] = useState(false);
 
+  
+
   useEffect(() => {
     // Reset states when news changes
     setImageError(false);
@@ -59,10 +61,10 @@ const NewsCard: React.FC<NewsCardProps> = ({ news }) => {
       rel="noopener noreferrer"
       className={`
         ${shouldHideCard ? "hidden" : "flex"}
-        flex-col h-auto max-w-full transition-all duration-300 bg-white border border-gray-200 rounded-lg shadow-lg hover:shadow-xl hover:scale-[101%]`}
+        flex-col h-auto max-w-full  transition-all duration-300 bg-white border-[2px] border-gray-200 rounded-lg shadow-lg hover:shadow-xl hover:scale-[101%]`}
     >
       {news.urlToImage && !imageError ? (
-        <div className="relative w-full h-44">
+        <div className="relative w-full h-44 ">
           <img
             src={news.urlToImage}
             alt="News Image"
@@ -84,10 +86,10 @@ const NewsCard: React.FC<NewsCardProps> = ({ news }) => {
         <ImageFallback />
       )}
 
-      <div className="flex flex-col justify-between flex-grow p-4">
+      <div className="flex flex-col border-t-[2px] border-[#171717] justify-between flex-grow p-4">
         <h1
           aria-label="news title"
-          className="mb-2 text-lg font-bold text-gray-800"
+          className="mb-2 text-lg font-bold text-gray-800 "
         >
           {!news.title || news.title.trim() === ""
             ? "Title not Available"

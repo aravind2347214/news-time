@@ -12,7 +12,7 @@ const Search = () => {
 
   return (
         <div>
-          <NewsHeader origin='search' title="Search" />
+          <NewsHeader origin='search' title="News Time" />
           <div className={` flex max-w-full gap-2 p-4 overflow-x-auto sm:flex-wrap md:justify-start`}
           >
           {searchQuery.trim() !== "" && (
