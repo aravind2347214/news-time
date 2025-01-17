@@ -7,6 +7,7 @@ import { fetchNewsByCategory } from '../../api/newsAPI';
 import { newsCategories } from '../../assets/Constants/newsCategories';
 import { useSelector } from 'react-redux';
 import { RootState } from '../../store/store';
+import { setSearchQuery } from '../../store/features/newsSlice';
 
 
 function Home() {
@@ -16,6 +17,7 @@ function Home() {
 
   useEffect(() => {
     dispatch(fetchNewsByCategory(selectedCategory || 'general'));
+    dispatch(setSearchQuery(""))
   }, []);
 
   return (

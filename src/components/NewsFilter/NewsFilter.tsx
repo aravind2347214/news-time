@@ -23,7 +23,7 @@ export const NewsFilter: React.FC<NewsFilterProps> = ({ newsCategories }) => {
   return (
     <section className="flex flex-col p-2 ">
       <div
-        className={` flex max-w-full gap-2 p-4 overflow-x-auto sm:flex-wrap md:justify-start`}
+        className={` flex max-w-full gap-2 p-4 overflow-x-auto xs:flex-wrap md:justify-start`}
       >
         {searchQuery.trim() === "" &&
           newsCategories.map((category: string) =>
