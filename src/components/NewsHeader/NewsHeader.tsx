@@ -48,7 +48,7 @@ export const NewsHeader: React.FC<NewsHeaderProps> = ({ title,origin }) => {
       }
       
       <div className="flex flex-row gap-2 ">
-      <img width={30} src={"./favicon.ico"} height={30} className="text-white"/>
+      <img width={30} src={"images/app-logo.png"} height={30} className="text-white"/>
       <h1
         aria-label="app title"
         className="text-2xl sm:text-3xl font-bold text-white "
