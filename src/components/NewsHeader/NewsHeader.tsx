@@ -1,6 +1,6 @@
 // import NewsSearch from "../NewsSearch/NewsSearch";
 
-import { ArrowLeft } from "lucide-react";
+import { ArrowLeft, Newspaper } from "lucide-react";
 import { Button } from "../Button/Button";
 import NewsSearch from "../NewsSearch/NewsSearch";
 import { useNavigate } from "react-router";
@@ -47,12 +47,15 @@ export const NewsHeader: React.FC<NewsHeaderProps> = ({ title,origin }) => {
         </Button>
       }
       
+      <div className="flex flex-row gap-2 ">
+      <img width={30} src={"./favicon.ico"} height={30} className="text-white"/>
       <h1
         aria-label="app title"
         className="text-2xl sm:text-3xl font-bold text-white "
       >
         {title}
       </h1>
+      </div>
       {origin==="search"&&
        <div className="w-5 h-5">
 
