@@ -1,6 +1,6 @@
 // import NewsSearch from "../NewsSearch/NewsSearch";
 
-import { ArrowLeft, Newspaper } from "lucide-react";
+import { ArrowLeft } from "lucide-react";
 import { Button } from "../Button/Button";
 import NewsSearch from "../NewsSearch/NewsSearch";
 import { useNavigate } from "react-router";
