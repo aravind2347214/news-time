@@ -84,7 +84,7 @@ const NewsCard: React.FC<NewsCardProps> = ({ news }) => {
         <ImageFallback />
       )}
 
-      <div className="flex flex-col border-t-[2px] border-[#171717] justify-between flex-grow p-4">
+      <div className="flex flex-col justify-between flex-grow p-4">
         <h1
           aria-label="news title"
           data-testid="news-title"

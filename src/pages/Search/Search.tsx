@@ -8,8 +8,6 @@ const Search = () => {
         (state: RootState) => state.news
       );
 
-      
-
   return (
         <div>
           <NewsHeader origin='search' title="News Time" />
