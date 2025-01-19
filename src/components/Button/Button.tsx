@@ -49,7 +49,7 @@ export function Button({
         aria-label={label}
         aria-disabled={disabled}
         aria-busy={loading}
-        className={`${className} font-medium text-white bg-[#171717] px-6 py-2 capitalize border text-xs md:text-sm rounded-full transition duration-100 disabled:opacity-50 `}
+        className={`${className} font-medium text-white bg-primaryBtn px-6 py-2 capitalize border text-xs md:text-sm rounded-full transition duration-100 disabled:opacity-50 `}
       >
         <div className="flex items-center">
           {children ?? <span className={`flex-grow text-center`}>{label}</span>}
@@ -79,7 +79,7 @@ export function Button({
         disabled={disabled}
         aria-label={label}
         aria-disabled={disabled}
-        className={`hover:bg-[#ececec] text-gray-400 ${className} px-6 py-2 capitalize border text-xs md:text-sm rounded-full transition duration-100 disabled:opacity-50`}
+        className={`hover:bg-outlineBtnHover text-gray-400 ${className} px-6 py-2 capitalize border-outlineBtnHover text-xs md:text-sm rounded-full transition duration-100 disabled:opacity-50`}
       >
         <div className="flex items-center">
           {children ?? <span className={`flex-grow text-center`}>{label}</span>}

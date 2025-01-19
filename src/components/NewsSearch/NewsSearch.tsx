@@ -57,7 +57,7 @@ const NewsSearch: React.FC<NewsSearchProps> = () => {
     >
       <input
         aria-label="search input"
-        className="text-white bg-transparent outline-none w-full"
+        className="w-full text-white bg-transparent outline-none"
         placeholder="Search news..."
         type="text"
         value={searchTerm}

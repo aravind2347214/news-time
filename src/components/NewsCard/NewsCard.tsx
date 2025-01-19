@@ -14,8 +14,6 @@ const NewsCard: React.FC<NewsCardProps> = ({ news }) => {
   const [imageError, setImageError] = useState(false);
   const [isImageLoaded, setIsImageLoaded] = useState(false);
 
-  
-
   useEffect(() => {
     // Reset states when news changes
     setImageError(false);
@@ -46,7 +44,7 @@ const NewsCard: React.FC<NewsCardProps> = ({ news }) => {
     news.description === "[Removed]";
 
   const ImageFallback = () => (
-    <div className="w-full bg-gray-100 text-gray-300 flex-col gap-2 flex justify-center items-center h-44 rounded-t-lg">
+    <div data-testid="fallback-image" className="flex flex-col items-center justify-center w-full gap-2 text-gray-300 bg-gray-100 rounded-t-lg h-44">
       <Image width={50} height={50} />
       Image not available
     </div>
@@ -79,7 +77,7 @@ const NewsCard: React.FC<NewsCardProps> = ({ news }) => {
             `}
           />
           {!isImageLoaded && (
-            <div className="absolute inset-0 bg-gray-100 animate-pulse rounded-t-lg" />
+            <div className="absolute inset-0 bg-gray-100 rounded-t-lg animate-pulse" />
           )}
         </div>
       ) : (
@@ -89,6 +87,7 @@ const NewsCard: React.FC<NewsCardProps> = ({ news }) => {
       <div className="flex flex-col border-t-[2px] border-[#171717] justify-between flex-grow p-4">
         <h1
           aria-label="news title"
+          data-testid="news-title"
           className="mb-2 text-lg font-bold text-gray-800 "
         >
           {!news.title || news.title.trim() === ""
@@ -98,6 +97,7 @@ const NewsCard: React.FC<NewsCardProps> = ({ news }) => {
         <div
           aria-label="publisher name"
           className="mb-4 text-sm font-bold text-gray-400"
+          data-testid="news-source"
         >
           {!news.source.name || news.source.name.trim() === ""
             ? "Source not Available"
@@ -106,6 +106,7 @@ const NewsCard: React.FC<NewsCardProps> = ({ news }) => {
         <p
           aria-label="news description"
           className="flex-1 text-sm text-gray-700 max-w-fit line-clamp-5"
+          data-testid="news-description"
         >
           {!news.description || news.description.trim() === ""
             ? "Description not Available"
@@ -116,7 +117,9 @@ const NewsCard: React.FC<NewsCardProps> = ({ news }) => {
           className="flex flex-row items-center gap-2 mt-3 text-gray-500"
         >
           <Clock aria-hidden="true" width={15} height={15} />
-          <div className="text-xs capitalize">
+          <div
+          data-testid="news-publish-date"
+           className="text-xs capitalize">
             {moment(news.publishedAt).fromNow()}
           </div>
         </div>

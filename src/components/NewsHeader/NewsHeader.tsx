@@ -36,7 +36,7 @@ export const NewsHeader: React.FC<NewsHeaderProps> = ({ title, origin }) => {
             <ArrowLeft
               strokeWidth={3}
               aria-label="back icon"
-              className=" text-white"
+              className="text-white "
               width={20}
               height={20}
             />
@@ -44,10 +44,10 @@ export const NewsHeader: React.FC<NewsHeaderProps> = ({ title, origin }) => {
         )}
 
         <div className="flex flex-row gap-2 ">
-          <img width={30} src={appLogo} height={30} className="text-white" />
+          <img width={30} src={appLogo} aria-label="app-logo" height={30} className="text-white" />
           <h1
-            aria-label="app title"
-            className="text-2xl sm:text-3xl font-bold text-white "
+            aria-label="app-title"
+            className="text-2xl font-bold text-white sm:text-3xl "
           >
             {title}
           </h1>

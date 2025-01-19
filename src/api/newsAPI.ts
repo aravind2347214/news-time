@@ -12,6 +12,7 @@ const axiosInstance = axios.create({
   }
 });
 
+
 export const fetchNewsByCategory = createAsyncThunk(
   'news/fetchByCategory',
   async (category: string, { rejectWithValue }) => {

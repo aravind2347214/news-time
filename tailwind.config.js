@@ -4,7 +4,8 @@ module.exports = {
   theme: {
     extend: {
       colors:{
-        primary: '#171717',
+        primaryBtn: '#171717',
+        outlineBtnHover:'#f3f3f3'
       }
     },
   },
